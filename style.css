@@ -1,0 +1,337 @@
+ *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+
+}
+
+body {
+        background-color: #121212;
+    
+        font-family: 'Montserrat', sans-serif;
+
+        width: 100%;
+        height: 100vh;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+}
+h1{
+    color: #fff;
+}
+.main-container{
+    background:url('spotify_bg.jpg');
+    border: thin solid;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.navbar {
+       
+    /* /* display: -ms-flexbox;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-around;
+    gap: 10px;
+    /* -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; */
+    /* background-color: aliceblue;
+    border: thin solid;
+    /* border-width: 5px; */
+    /* width: 40vh; */ 
+    /* position: relative; */
+    /* width: 25%; */
+    /* height: 100%; */
+    /* border: 1px solid #fff; */
+    /* background-color: #111727; */
+    /* box-shadow: 5px 0px 2px #090f1f;
+    color:#101010;
+    gap: 10px; */
+  
+
+     position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 196px;
+        background-color: #000000;
+        padding: 24px;
+} 
+
+ a{
+    color: gainsboro;
+    text-decoration: none;
+}
+a:active{
+    color: #ffff;
+}
+
+a:hover{
+    color: #ffff;
+}
+a:focus{
+    color: #ffff;
+}
+.navbar h1{
+    font-size: 30px;
+}
+
+.fa{
+    color: #b3b3b3;
+}
+.logo{
+    height: 15px;
+    width: 130px;
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.links{
+margin-top: 44px;
+font-size: 20px;
+}
+.links a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* --------------CONTENT------------------ */
+
+
+.form-control {
+    margin-left: 5px;
+    display: block;
+    width: 60%;
+    height: calc(0.5em + 1rem + 2px);
+    padding: 0.5rem 1.1rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,20.1);
+    border-radius: 48px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /* padding: 10px;
+    text-align: center; */
+}
+
+input{
+    overflow: visible;
+    font-family: inherit;
+}
+.input-icons i {
+    position: absolute;
+    margin:8px;
+}
+  
+.input-icons {
+    width: 120%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+.navbar img{
+    height:50PX ;
+    width: 62PX ;
+}
+  
+.input-icons.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    width: 50%;
+    
+}
+.user-icon{
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+    height: calc(0.5em + 1rem + 2px);
+    padding: 0.5rem 1.1rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    /* color: #495057;
+    background-color:#101010; */
+    /* background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,20.1); */
+    /* border-radius: 48px;    */
+}
+.user-icon .fa{
+    color: #ffff;
+}
+.user-icon p{
+     overflow: none;
+     color:#121212;
+}
+
+.top-container{
+/* display: flex; 
+margin-top: 10px;
+align-items: flex-start;
+width: 100%;
+height: 16vh;
+background-color: aquamarine;    */
+/* width: 85%;
+height: 16%; */
+/* border: 1px solid #fff; */
+display: flex;
+align-items: flex-start;
+/* flex-wrap: wrap; */
+padding: 15px;
+justify-content: space-between;
+background-color: #101010;
+padding: 14px 30px;
+box-sizing: border-box;
+height: 100px;
+}
+
+#submit{
+    padding: 12px 24px;
+    border-radius: 20px;
+    margin-left: 8px;
+}
+
+.bottom{
+    background-color: #121215;
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+}
+.bottom h2{
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.side-container{
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 245px;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+    overflow: none;
+}
+
+/* --------------------song playlist----------- */
+.songlist{
+   
+    padding: 20px 40px;
+}
+.songname{
+    margin: 11px 14px;
+
+}
+.timestamp{
+    margin: 12px 28px;
+}
+#play-icon img{
+        width: 29px;
+        margin: 6px -15px;
+}
+
+img{
+    height: 200px;
+}
+
+.icon-play{
+    font-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.songlist{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.songlist .list {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+  }
+  
+  .songlist .list .item {
+    min-width: 140px;
+    width: 160px;
+    padding: 15px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+  } 
+  .songlist .list .item:hover {
+    background-color: #252525;
+  }
+  .songlist .list .item img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .songlist .list .item .play {
+    position: relative;
+  }
+  .songlist .list .item .play .fa {
+    position: absolute;
+    right: 10px;
+    top: -60px;
+    padding: 18px;
+    background-color: #1db954;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+  }
+  .songlist .list .item:hover .play .fa {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+
+  .songlist .list .item h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } 
+
+
+
+
+

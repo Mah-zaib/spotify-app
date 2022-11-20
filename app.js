@@ -53,33 +53,92 @@ catch(err){
 }
 }
 
-var songList = document.querySelector('.songlist');
+
+var searchuser=document.querySelector("#searchUser");
+var submit=document.querySelector("#submit");
+
+searchuser.addEventListener('keypress',(e)=>{
+  if (e.key=="Enter"){
+    e.preventDefault;
+    playSong();    
+  }
+})
+
+submit.addEventListener('click',(e)=>{
+  if (e.key=="Enter"){
+    e.preventDefault;
+    playSong();    
+  }
+})
+
+
+
+var songList = document.querySelector('#songlist');
 var output = '';
 function playSong(){
-  getTrackData('atif')
+  getTrackData(searchuser.value)
   .then((res) => {
-    res.tracks.items.forEach((i) => {
-      var list = document.createElement('div');
-      list.className = 'list';
-      output = `
-      <img class="thumbnail" src="${i.album.images[0].url}">
-      <audio controls>
-  <source src="${i.preview_url}" type="audio/ogg">
-  <source src="${i.preview_url}" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+    let j= 0;
+    res.tracks.items.forEach((i) => {    
+      output += `
+    <div class="list"> 
+      <div class="item">
+       <img class="thumbnail" src="${i.album.images[0].url}">
+        <div>
+           <p>${i.name}</p>
+           <audio controls><source id="song" src="${i.preview_url}" type="audio/ogg"></audio>
+        </div>
+      </div>
+   </div> 
+ <div id="${j}" class="modal">
+    <div class="modal-content">
+        <img src="${i.album.images[0].url}">
+            <p>${i.name}</p>
+            <audio controls><source id="song" src="${i.preview_url}" type="audio/ogg"></audio>
+            <div class="closs">Close
+            </div>
+    </div>
+ </div>
 <br>
 `;
-list.innerHTML = output;
-songList.appendChild(list);
-    });
+j++;
+songList.innerHTML = output;
+// songList.appendChild(list);
+});
   })
   .catch((e) => {
     console.log(e.status);
   })
 }
-
 playSong();
+
+
+// -----------modal----------
+var songList = document.querySelector('#songlist');
+songList.addEventListener('click',(e) => {
+  if (e.target.nodeName == 'I') {
+      var modal = document.getElementById(e.target.parentNode.parentNode.parentNode.nextSibling.id);
+      var audio = e.target.parentNode.parentNode.parentNode.nextSibling.childNodes[0].childNodes[2];
+      modal.style.display = "block";
+      audio.play();
+      var close = e.target.parentNode.parentNode.parentNode.nextSibling.childNodes[0].lastElementChild;
+      close.addEventListener('click', () => {
+          audio.pause();
+          modal.style.display = "none";
+      });
+      window.onclick = function (event) {
+          if (event.target == modal) {
+              audio.pause();
+              modal.style.display = "none";
+          }
+      }
+  }
+});
+
+
+
+
+
 
   //  const searchUser = document.getElementById('searchUser').addEventListener('click',data);
 
